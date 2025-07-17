@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platinum Smile Dental Clinic - Premium Dental Care</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            /* Remove animation and text-shadow */
+            animation: none;
+            text-shadow: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            transform: translateY(-2px);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: white;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(102,126,234,0.85) 0%, rgba(118,75,162,0.85) 100%),
+                url('https://images.pexels.com/photos/5355694/pexels-photo-5355694.jpeg?auto=compress&w=1200&q=80') center/cover no-repeat;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: slideInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            animation: slideInUp 1s ease 0.2s both;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            animation: slideInUp 1s ease 0.4s both;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, rgba(255,255,255,0.92) 0%, rgba(195,207,226,0.92) 100%),
+                url('YOUR_IMAGE_PATH_OR_URL_HERE') center/cover no-repeat;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: #666;
+        }
+
+        .about-image {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            height: 400px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="1" fill="white" opacity="0.1"/><circle cx="10" cy="90" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-form {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.9);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .submit-btn {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                width: 200px;
+                border-radius: 10px;
+                box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+                z-index: 1001;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .hamburger {
+                display: block;
+                font-size: 2rem;
+                cursor: pointer;
+                color: white;
+                margin-left: 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .hamburger {
+            display: none;
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .header-title {
+            font-size: 3.5rem;
+            color: white;
+            font-weight: bold;
+            line-height: 1.1;
+            /* No animation, no text-shadow */
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            /* Remove animation and text-shadow */
+            animation: none;
+            text-shadow: none;
+        }
+        @media (max-width: 600px) {
+            .header-title {
+                font-size: 2.1rem;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body, .contact-info, .contact-info p, .contact-info a, .contact-info ul, .contact-info li {
+            font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+        }
+        .contact-info h3 {
+            font-size: 2rem !important;
+            font-weight: 700 !important;
+            letter-spacing: 0.01em;
+            margin-bottom: 1.2rem !important;
+        }
+        .contact-info p, .contact-info ul, .contact-info li {
+            font-size: 1.13rem !important;
+            line-height: 1.7 !important;
+            color: #f8f9fa !important;
+        }
+        .contact-info a {
+            color: #fff !important;
+            text-decoration: underline;
+            font-weight: 500;
+        }
+        .contact-info ul {
+            margin-top: 0.7rem;
+            margin-bottom: 0.7rem;
+        }
+        .contact-info li {
+            margin-bottom: 0.3rem;
+        }
+        @media (max-width: 600px) {
+            .contact-info h3 {
+                font-size: 1.3rem !important;
+            }
+            .contact-info p, .contact-info ul, .contact-info li {
+                font-size: 1rem !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo" style="display:flex;align-items:center;gap:1.1rem;">
+                <span class="header-title">✨ Platinum Smile Dental Clinic</span>
+            </div>
+            <div class="hamburger" id="hamburger" aria-label="Open navigation menu" tabindex="0">&#9776;</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Your Perfect Smile Awaits</h1>
+            <p>Experience premium dental care with cutting-edge technology and compassionate service</p>
+            <a href="#contact" class="cta-button">Book Your Appointment</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div style="display:flex;flex-direction:column;align-items:center;">
+                <svg width="54" height="54" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:0.7rem;">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3.01 5.74.41.28.65.77.54 1.25l-1.16 5.22c-.19.86.52 1.66 1.37 1.49.47-.09.85-.48.94-.95l.7-3.5c.09-.45.49-.77.95-.77s.86.32.95.77l.7 3.5c.09.47.47.86.94.95.85.17 1.56-.63 1.37-1.49l-1.16-5.22a1.25 1.25 0 0 1 .54-1.25C17.81 13.47 19 11.38 19 9c0-3.87-3.13-7-7-7z" fill="url(#tooth-gradient)"/>
+                  <defs>
+                    <linearGradient id="tooth-gradient" x1="5" y1="2" x2="19" y2="22" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#667eea"/>
+                      <stop offset="1" stop-color="#764ba2"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+                <h2 class="section-title fade-in">Our Services</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">🦷</div>
+                    <h3>General Dentistry</h3>
+                    <p>Comprehensive oral health care including cleanings, fillings, and preventive treatments to keep your smile healthy and bright.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">✨</div>
+                    <h3>Cosmetic Dentistry</h3>
+                    <p>Transform your smile with veneers, whitening, and aesthetic treatments designed to give you the confidence you deserve.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">🔧</div>
+                    <h3>Restorative Care</h3>
+                    <p>Advanced solutions for damaged teeth including crowns, bridges, and implants using the latest dental technology.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">👨‍⚕️</div>
+                    <h3>Oral Surgery</h3>
+                    <p>Expert surgical procedures performed with precision and care in our state-of-the-art facility.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">🦴</div>
+                    <h3>Orthodontics</h3>
+                    <p>Straighten your teeth with traditional braces or modern clear aligners for a perfectly aligned smile.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <h2>About Dr. Nitu Rana</h2>
+                    <p><strong>BDS</strong></p>
+                    <p>Dr. Nitu Rana is a passionate dental professional with over 8 years of experience, dedicated to providing gentle, personalized care using the latest dental technology. She believes in making every patient feel comfortable and confident in their smile.</p>
+                    <p>Our practice combines modern technology with personalized care to ensure every patient receives the best possible treatment in a comfortable and welcoming environment.</p>
+                    <p>We believe that everyone deserves a healthy, beautiful smile, and we're here to make that a reality for you and your family.</p>
+                </div>
+                <div class="about-image fade-in" style="display:flex;flex-direction:column;align-items:center;gap:1rem;">
+                    <img src="https://images.pexels.com/photos/5355694/pexels-photo-5355694.jpeg?auto=compress&w=400&q=80" alt="Dentist performing a dental checkup on a smiling patient" style="width:180px;height:140px;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,0.1);object-fit:cover;" />
+                    <div style="font-size:1rem;color:#fff;background:rgba(0,0,0,0.2);padding:0.2rem 0;width:100%;text-align:center;">Dentist Examining Patient</div>
+                    <img src="https://images.pexels.com/photos/3845810/pexels-photo-3845810.jpeg?auto=compress&w=400&q=80" alt="Dental team with patient in dental chair" style="width:160px;height:120px;border-radius:12px;object-fit:cover;border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,0.08);margin-top:0.5rem;" />
+                    <div style="font-size:0.95rem;color:#fff;background:rgba(0,0,0,0.15);padding:0.1rem 0;width:100%;text-align:center;">Dental Team at Work</div>
+                </div>
+            </div>
+            <div class="gallery fade-in" style="margin-top:2.5rem;display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;">
+                <img src="https://images.pexels.com/photos/4269696/pexels-photo-4269696.jpeg?auto=compress&w=400&q=80" alt="Dentist treating a young patient" style="width:140px;height:100px;object-fit:cover;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.08);" />
+                <img src="https://images.pexels.com/photos/5355723/pexels-photo-5355723.jpeg?auto=compress&w=400&q=80" alt="Dental hygienist preparing for treatment in clinic" style="width:140px;height:100px;object-fit:cover;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.08);" />
+                <img src="https://images.pexels.com/photos/5355698/pexels-photo-5355698.jpeg?auto=compress&w=400&q=80" alt="Dentist and assistant working together in clinic" style="width:140px;height:100px;object-fit:cover;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.08);" />
+                <img src="https://images.pexels.com/photos/6812560/pexels-photo-6812560.jpeg?auto=compress&w=400&q=80" alt="Dental team consulting with patient" style="width:140px;height:100px;object-fit:cover;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.08);" />
+            </div>
+        </div>
+    </section>
+    <!-- End of About Section -->
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-us-section" style="background:linear-gradient(135deg,#e0e7ff 0%,#fffbe6 100%);padding:3rem 2rem 2rem 2rem;">
+        <div class="container" style="max-width:900px;margin:0 auto;">
+            <h2 class="section-title" style="margin-bottom:2.2rem;">The Platinum Smile Advantage</h2>
+            <div class="advantage-cards-wrapper">
+                <div class="advantage-card">
+                    <div class="advantage-icon">🧑‍🤝‍🧑</div>
+                    <div class="advantage-text">Real people, real results</div>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon">✨</div>
+                    <div class="advantage-text">Clean, safe, and sparkling—always</div>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon">😁</div>
+                    <div class="advantage-text">Smiles that last, stories that matter</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <style>
+    .advantage-cards-wrapper {
+        display: flex;
+        justify-content: center;
+        gap: 2.2rem;
+        flex-wrap: wrap;
+        margin-top: 0.5rem;
+    }
+    .advantage-card {
+        background: #fff;
+        border-radius: 18px;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        padding: 1.3rem 1.5rem 1.1rem 1.5rem;
+        min-width: 220px;
+        max-width: 260px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        transition: box-shadow 0.2s, transform 0.2s;
+        font-family: 'Inter', 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .advantage-card:hover {
+        box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+        transform: translateY(-4px) scale(1.03);
+    }
+    .advantage-icon {
+        font-size: 2.2rem;
+        margin-bottom: 0.7rem;
+    }
+    .advantage-text {
+        font-size: 1.13rem;
+        font-weight: 500;
+        color: #222;
+    }
+    @media (max-width: 900px) {
+        .advantage-cards-wrapper {
+            gap: 1.2rem;
+        }
+        .advantage-card {
+            min-width: 180px;
+            max-width: 98vw;
+            padding: 1.1rem 0.7rem;
+        }
+    }
+    @media (max-width: 600px) {
+        .advantage-cards-wrapper {
+            flex-direction: column;
+            align-items: center;
+        }
+        .advantage-card {
+            width: 98vw;
+            min-width: 0;
+            max-width: 98vw;
+        }
+    }
+    </style>
+
+    <!-- Reviews Grid Section -->
+    <section class="reviews-grid" id="reviews-grid" style="padding:4rem 2rem;background:linear-gradient(135deg,#e0e7ff 0%,#fffbe6 100%);">
+        <div class="container" style="max-width:1100px;margin:0 auto;">
+            <div style="display:flex;flex-direction:column;align-items:center;">
+                <h2 class="section-title" style="margin-bottom:2.5rem;">What Our Patients Say</h2>
+            </div>
+            <div class="reviews-grid-wrapper">
+                <!-- Review cards will be injected here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div style="display:flex;flex-direction:column;align-items:center;">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:0.7rem;">
+                  <path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.07 21 3 13.93 3 5a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.24 1.01l-2.2 2.2z" fill="url(#phone-gradient)"/>
+                  <defs>
+                    <linearGradient id="phone-gradient" x1="3" y1="2" x2="21" y2="22" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#667eea"/>
+                      <stop offset="1" stop-color="#764ba2"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+                <h2 class="section-title">Get In Touch</h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info fade-in">
+                    <h3>Contact Information</h3>
+                    <p>📍 Platinum Smile Dental Clinic</p>
+                    <p>📞 <a href="tel:9625892503" style="color:white;text-decoration:underline;">9625892503</a></p>
+                    <p>✉️ <a href="mailto:platinumsmilecare32@gmail.com" style="color:white;text-decoration:underline;">platinumsmilecare32@gmail.com</a></p>
+                    <p>🕒 Mon-Fri: 8AM-6PM | Sat: 9AM-3PM</p>
+                    <p><a href="https://wa.me/919625892503" target="_blank" style="display:inline-block;background:#25D366;color:white;padding:0.5rem 1rem;border-radius:20px;text-decoration:none;margin-top:0.5rem;">💬 WhatsApp Us</a></p>
+                    <p><a href="https://maps.app.goo.gl/qHNVgkpTzqdqoWNE7" target="_blank" style="display:inline-block;background:#4285F4;color:white;padding:0.5rem 1.2rem;border-radius:20px;text-decoration:none;margin-top:0.5rem;font-weight:bold;">📍 Get Directions on Google Maps</a></p>
+                    <p><a href="https://maps.app.goo.gl/qHNVgkpTzqdqoWNE7" target="_blank" style="display:inline-block;background:#fbbc05;color:#222;padding:0.7rem 1.5rem;border-radius:30px;text-decoration:none;font-weight:bold;margin-top:0.5rem;">⭐ Leave a Review on Google</a></p>
+                    <div style="margin-top:1.5rem;">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3396.2101961234953!2d76.94176987627498!3d31.65546857415243!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39051dd5db651b41%3A0xbe05648010eb5e89!2sPlatinum%20smile%20dental%20clinic!5e0!3m2!1sen!2sin!4v1752764240198!5m2!1sen!2sin" width="100%" height="180" style="border:0;border-radius:12px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Platinum Smile Dental Clinic Gutkar Mandi Himachal Location"></iframe>
+                    </div>
+                </div>
+                <div class="contact-form fade-in">
+                    <h3>Schedule Your Appointment</h3>
+                    <form id="appointmentForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="date" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Preferred time and additional notes" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Book Appointment</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Platinum Smile dental clinic. All rights reserved. | Crafted with ❤️ for your perfect smile</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(102, 126, 234, 0.95)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+            }
+        });
+
+        // Hamburger menu for mobile navigation
+        document.getElementById('hamburger').onclick = function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        };
+        document.getElementById('hamburger').onkeypress = function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                document.querySelector('.nav-links').classList.toggle('active');
+            }
+        };
+
+        // Form submission to Google Sheets
+        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const form = this;
+            fetch('https://script.google.com/macros/s/AKfycbzDcME5hyUZprAQ-2HMSM1UPEyDngmQ0VFFiJejOfadmZrxmS6rWVR9ezt5KIvIUsvA/exec', { // updated URL
+                method: 'POST',
+                body: JSON.stringify({
+                    name: form.elements[0].value,
+                    email: form.elements[1].value,
+                    phone: form.elements[2].value,
+                    date: form.elements[3].value,
+                    message: form.elements[4].value
+                }),
+                headers: { 'Content-Type': 'application/json' }
+            }).then(res => {
+                if(res.ok) {
+                    const successMsg = document.createElement('div');
+                    successMsg.innerHTML = `
+                        <div style="background: linear-gradient(45deg, #28a745, #20c997);color: white;padding: 1rem;border-radius: 10px;text-align: center;margin-top: 1rem;animation: slideInUp 0.5s ease;">
+                            🎉 Thank you! Your appointment request has been received. We'll contact you within 24 hours to confirm your appointment.<br><br>
+                            <a href="https://maps.app.goo.gl/qHNVgkpTzqdqoWNE7" target="_blank" style="display:inline-block;background:#fbbc05;color:#222;padding:0.7rem 1.5rem;border-radius:30px;text-decoration:none;font-weight:bold;margin-top:0.7rem;">⭐ Leave a Review on Google</a>
+                        </div>
+                    `;
+                    form.appendChild(successMsg);
+                    form.reset();
+                    setTimeout(() => { successMsg.remove(); }, 8000);
+                } else {
+                    alert('There was an error. Please try again.');
+                }
+            }).catch(() => {
+                alert('There was an error. Please try again.');
+            });
+        });
+
+        // Add floating particles effect
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.style.cssText = `
+                position: fixed;
+                width: 4px;
+                height: 4px;
+                background: rgba(255,255,255,0.3);
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 1;
+                left: ${Math.random() * 100}vw;
+                top: 100vh;
+                animation: float-up ${3 + Math.random() * 3}s linear forwards;
+            `;
+            document.body.appendChild(particle);
+            setTimeout(() => {
+                particle.remove();
+            }, 6000);
+        }
+
+        // Add CSS for floating particles
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes float-up {
+                to {
+                    transform: translateY(-110vh) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Create particles periodically
+        setInterval(createParticle, 500);
+
+        // Floating customer reviews (sample, 4-5 stars)
+        const reviews = [
+            {
+                name: "Priya S.",
+                rating: 5,
+                text: "Dr. Nitu is the best! My teeth have never looked better.",
+                date: "May 2025"
+            },
+            {
+                name: "Rohit K.",
+                rating: 5,
+                text: "Very gentle and professional. Highly recommend!",
+                date: "August 2023"
+            },
+            {
+                name: "Anjali M.",
+                rating: 4,
+                text: "Great experience, friendly staff.",
+                date: "February 2024"
+            },
+            {
+                name: "Suresh P.",
+                rating: 5,
+                text: "State-of-the-art clinic and caring team!",
+                date: "November 2024"
+            },
+            {
+                name: "Meena T.",
+                rating: 5,
+                text: "Excellent service and very friendly staff. Highly recommended!",
+                date: "March 2023"
+            },
+            {
+                name: "Deepak C.",
+                rating: 5,
+                text: "Very professional and caring. Will visit again for sure.",
+                date: "April 2025"
+            }
+        ];
+
+        function getAvatarColor(name) {
+            // Simple hash for color selection
+            const colors = ['#6C63FF','#FFB347','#FF6B6B','#4DD0E1','#81C784','#FFD600','#BA68C8'];
+            let hash = 0;
+            for (let i = 0; i < name.length; i++) hash = name.charCodeAt(i) + ((hash << 5) - hash);
+            return colors[Math.abs(hash) % colors.length];
+        }
+
+        function getInitials(name) {
+            return name.split(' ').map(n => n[0]).join('').slice(0,2).toUpperCase();
+        }
+
+        function createReviewElement(review) {
+            const el = document.createElement('div');
+            el.className = 'floating-review';
+            el.innerHTML = `
+                <div style="display:flex;align-items:center;gap:0.7rem;">
+                    <span class="avatar-circle" style="background:${getAvatarColor(review.name)};color:#fff;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:50%;font-weight:bold;font-size:1.1em;">${getInitials(review.name)}</span>
+                    <div style="display:flex;flex-direction:column;">
+                        <div style="display:flex;align-items:center;gap:0.5rem;">
+                            <span style="color:#FFD700;font-size:1.1rem;">${'★'.repeat(review.rating)}${'☆'.repeat(5-review.rating)}</span>
+                            <span style="font-weight:bold;">${review.name}</span>
+                            <span style="color:#888;font-size:0.95em;margin-left:0.5rem;">${review.date}</span>
+                        </div>
+                        <div style="margin-top:0.3rem;">${review.text}</div>
+                    </div>
+                </div>
+                <div style="display:flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.95em;opacity:0.8;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/IOS_Google_icon.png" alt="Google logo" style="width:18px;height:18px;vertical-align:middle;background:transparent;border-radius:50%;box-shadow:none;" />
+                    <span>via Google</span>
+                </div>
+            `;
+            // Make the review clickable
+            el.style.cursor = 'pointer';
+            el.title = 'See more reviews or leave your own on Google Maps';
+            el.onclick = () => {
+                window.open('https://maps.app.goo.gl/qHNVgkpTzqdqoWNE7', '_blank');
+            };
+            return el;
+        }
+
+        let reviewIndex = 0;
+        function showNextReview() {
+            let existing = document.querySelector('.floating-review');
+            if (existing) existing.remove();
+            const review = reviews[reviewIndex];
+            const el = createReviewElement(review);
+            document.body.appendChild(el);
+            setTimeout(() => {
+                el.classList.add('visible');
+            }, 100);
+            setTimeout(() => {
+                el.classList.remove('visible');
+                setTimeout(() => el.remove(), 600);
+            }, 5000);
+            reviewIndex = (reviewIndex + 1) % reviews.length;
+        }
+        setInterval(showNextReview, 6000);
+        window.addEventListener('DOMContentLoaded', showNextReview);
+    </script>
+    <style>
+        .floating-review {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #fffbe6 0%, #e0e7ff 100%);
+            color: #333;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+            padding: 1.1rem 1.5rem;
+            min-width: 260px;
+            max-width: 320px;
+            z-index: 2000;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.6s cubic-bezier(.4,2,.3,1);
+            font-size: 1rem;
+            pointer-events: auto;
+        }
+        .floating-review.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .avatar-circle {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            letter-spacing: 0.5px;
+        }
+    </style>
+    <script>
+    // Reviews Grid Logic
+    function createGridCard(review) {
+        const card = document.createElement('div');
+        card.className = 'grid-card';
+        card.innerHTML = `
+            <div style="display:flex;align-items:center;gap:0.7rem;margin-bottom:0.3rem;">
+                <span class="avatar-circle" style="background:${getAvatarColor(review.name)};color:#fff;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:50%;font-weight:bold;font-size:1.15em;">${getInitials(review.name)}</span>
+                <div style="flex:1;display:flex;flex-direction:column;">
+                    <div style="display:flex;justify-content:space-between;width:100%;align-items:center;">
+                        <span style="font-weight:bold;font-size:1.08em;">${review.name}</span>
+                        <span style="color:#888;font-size:0.97em;">${review.date}</span>
+                    </div>
+                    <span style="color:#FFD700;font-size:1.1rem;">${'★'.repeat(review.rating)}${'☆'.repeat(5-review.rating)}</span>
+                </div>
+            </div>
+            <div style="margin:0.5rem 0 0.7rem 0;">${review.text}</div>
+            <div style="display:flex;align-items:center;gap:0.3rem;font-size:0.95em;opacity:0.8;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/IOS_Google_icon.png" alt="Google logo" style="width:18px;height:18px;vertical-align:middle;background:transparent;border-radius:50%;box-shadow:none;" />
+                <span>via Google</span>
+            </div>
+        `;
+        card.onclick = () => window.open('https://maps.app.goo.gl/qHNVgkpTzqdqoWNE7', '_blank');
+        card.style.cursor = 'pointer';
+        card.title = 'See more reviews or leave your own on Google Maps';
+        return card;
+    }
+    const gridWrapper = document.querySelector('.reviews-grid-wrapper');
+    reviews.forEach(r => gridWrapper.appendChild(createGridCard(r)));
+    </script>
+    <style>
+    .reviews-grid-wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+    .grid-card {
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+        padding: 1.5rem 1.2rem;
+        min-width: 0;
+        transition: box-shadow 0.2s;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+    .grid-card:active, .grid-card:hover {
+        box-shadow: 0 8px 24px rgba(0,0,0,0.13);
+    }
+    @media (max-width: 900px) {
+        .reviews-grid-wrapper {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    @media (max-width: 600px) {
+        .reviews-grid-wrapper {
+            grid-template-columns: 1fr;
+            gap: 1.1rem;
+        }
+        .grid-card {
+            padding: 1.1rem 0.7rem;
+        }
+    }
+    </style>
+</body>
+</html>
